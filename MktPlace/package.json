@@ -1,0 +1,63 @@
+{
+  "name": "mkt-place",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve --open"
+  },
+  "description": "MktPlace",
+  "author": {
+    "name": "AndreCanuto"
+  },
+  "dependencies": {
+    "axios": "^0.19.1",
+    "bootstrap-vue": "^2.2.2",
+    "sweetalert2": "^9.6.0",
+    "vee-validate": "^3.2.1",
+    "vue": "2.5.17",
+    "vue-class-component": "^7.2.2",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.1.5",
+    "vue-the-mask": "^0.11.1",
+    "vue2-datepicker": "^3.3.0",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "3.0.4",
+    "@vue/cli-plugin-eslint": "3.0.4",
+    "@vue/cli-service": "3.0.4",
+    "eslint": "5.6.0",
+    "eslint-plugin-vue": "4.7.1",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "2.5.17",
+    "webpack": "^4.41.5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
