@@ -19,6 +19,7 @@
     "vee-validate": "^3.2.1",
     "vue": "2.5.17",
     "vue-class-component": "^7.2.2",
+    "vue-image-lightbox": "^6.4.0",
     "vue-moment": "^4.1.0",
     "vue-router": "^3.1.5",
     "vue-the-mask": "^0.11.1",
