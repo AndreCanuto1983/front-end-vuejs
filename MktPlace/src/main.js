@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import StoreVuex from './configs/VuexConfig' //Vuex
 import VueRouter from 'vue-router'
 import VueTheMask from 'vue-the-mask'
-import App from './App.vue'
 import routes from './routes/routes.js'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -12,6 +11,7 @@ import { LayoutPlugin } from 'bootstrap-vue' // This imports all the layout comp
 import { ModalPlugin } from 'bootstrap-vue' // This imports <b-modal> as well as the v-b-modal directive as a plugin:
 import { CardPlugin } from 'bootstrap-vue' // This imports <b-card> along with all the <b-card-*> sub-components as a plugin:
 import { DropdownPlugin, TablePlugin } from 'bootstrap-vue' // This imports the dropdown and table plugins
+import App from './App.vue'
 
 Vue.use(Vuex);
 Vue.use(VueRouter);

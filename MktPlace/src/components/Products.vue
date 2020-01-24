@@ -1,23 +1,31 @@
 <template>
-    <div>
-        <b-button>Button</b-button>
-        <b-button variant="danger">Button</b-button>
-        <b-button variant="success">Button</b-button>
-        <b-button variant="outline-primary">Button</b-button>
-    </div>
+    <b-container>
+        <div>
+            <label>Nome</label>
+            <b-form-input></b-form-input>
+            <label>Email</label>
+            <b-form-input></b-form-input>
+            <label>Cpf</label>
+            <b-form-input></b-form-input>
+            <label>Data Nascimento</label>
+            <b-form-input></b-form-input>
+            <label>Telefone</label>
+            <b-form-input></b-form-input>
+        </div>
+    </b-container>
 </template>
 
 <script>
-    import Vue from 'vue';
-    //import Component from 'vue-class-component';    
-    ////import Spinner from './componentsSEN/Spinner.vue';
-
-    //@Component({
-    //    components: {
-    //        //Spinner
-    //    }
-    //})
-    export default class Products extends Vue {
+    export default {
+        data() {
+            return {
+                pessoa: {}
+            };
+        },        
+        mounted() {
+        },
+        methods: {           
+        },
 
     }
 </script>
