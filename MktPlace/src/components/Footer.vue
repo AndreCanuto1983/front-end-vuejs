@@ -14,7 +14,7 @@
         width: 100%;
         text-align: center;
         background-color: lightgrey;
-        padding: 10px;
+        padding: 0px;
     }
 
     .footerName{

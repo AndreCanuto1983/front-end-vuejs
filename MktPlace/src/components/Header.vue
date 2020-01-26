@@ -1,10 +1,28 @@
 ﻿<template>
     <div class="header">
-        <p class="headerName"><b>MktPlace</b></p>
+        <b-row align-v="start" style="padding-left:100px">
+            <h6><b class="mktColor">Mkt</b></h6>
+            <h6><b class="placeColor">Place</b></h6>
+            <!--falta ajustes-->
+            <p @click.prevent="goRequests()" class="alignProduct alterCursor"></p>
+            <img @click.prevent="goRequests()" class="img alterCursor" src="@/assets/icons/shopping-cart.svg" />
+        </b-row>
     </div>
 </template>
 
 <script>
+    export default {
+        data() {
+            return {
+                products: {}
+            };
+        },
+        methods: {
+            goRequests() {
+                this.$router.push({ path: "/requests" }).catch(err => { });
+            },
+        },
+    };
 </script>
 
 <style scoped>
@@ -14,11 +32,28 @@
         position: fixed;
         width: 100%;
         text-align: center;
-        background-color: lightgrey;
+        background-color: white;
         padding: 10px;
     }
 
-    .headerName {
+    .mktColor {
         color: dimgray;
+    }
+
+    .placeColor {
+        color: blueviolet;
+    }
+
+    .img {
+        max-width: 150px;
+        color: blueviolet;
+    }
+
+    .alignProduct {
+        margin-right: 70%;
+    }
+
+    .alterCursor {
+        cursor: pointer;
     }
 </style>

@@ -1,30 +1,29 @@
 <template>
     <b-container>
         <Header></Header>
-        <b-row v-if="products.length > 0">
-            <div v-for="item in products"
-                 class="col-lg-3 col-md-5"
-                 style="margin: 10px">
-                <b-card class="shadow">
-                    <img class="img" :src="item.picture" />
-                    <p class="tag">Eletrônicos</p>
-                    <div class="description">
-                        <p>{{item.name}}</p>
-                    </div>
-                    <div>
-                        <h5>R${{item.price}}</h5>
-                    </div>
-                </b-card>
-                <b-button class="button">
-                    ADICIONAR AO CARRINHO
-                </b-button>
-            </div>
-        </b-row>
-        <!--spinner-->
-        <b-row v-else align-self="center">
-            <b-spinner variant="primary" type="grow" label="Spinning"></b-spinner>
-            Carregando...
-        </b-row>
+        <Banner></Banner>
+        <div v-if="products.length > 0">
+            <b-row class="alignContent" align-h="center">
+                <div v-for="item in products"
+                     class="col-lg-3 col-md-5"
+                     style="margin: 10px">
+                    <b-card class="shadow">
+                        <img class="img" :src="item.picture" />
+                        <p class="tag">Eletrônicos</p>
+                        <div class="description">
+                            <p>{{item.name}}</p>
+                        </div>
+                        <div>
+                            <h5>R${{item.price}}</h5>
+                        </div>
+                    </b-card>
+                    <b-button class="button">
+                        ADICIONAR AO CARRINHO
+                    </b-button>
+                </div>
+            </b-row>
+        </div>
+        <Spinner v-else></Spinner>
         <Footer></Footer>
     </b-container>
 </template>
@@ -33,11 +32,15 @@
     import ProductService from '../services/ProductService'
     import Header from '../components/Header.vue'
     import Footer from '../components/Footer.vue'
+    import Banner from '../components/Banner.vue'
+    import Spinner from '../components/Spinner.vue'
 
     export default {
         components: {
             'Header': Header,
-            'Footer': Footer
+            'Footer': Footer,
+            'Banner': Banner,
+            'Spinner': Spinner
         },
         data() {
             return {
@@ -90,12 +93,19 @@
     }
 
     .description {
-        height: 140px;
+        height: 100px;
         width: 150px;
         display: inline-block;
         overflow: hidden;
         text-overflow: clip ellipsis;
         direction: ltr;
+        font-size: 12px;
+    }
+
+    .alignContent {
+        top: 160px;
+        position: relative;
+        margin-bottom: 60px;
     }
 
     .button {

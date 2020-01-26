@@ -33,8 +33,25 @@
     <Content Include=".eslintignore" />
     <Content Include="jsconfig.json" />
     <Content Include="public\favicon.png" />
+    <Content Include="public\fonts\SourceSansPro-Black.ttf" />
+    <Content Include="public\fonts\SourceSansPro-Bold.ttf" />
+    <Content Include="public\fonts\SourceSansPro-Regular.ttf" />
     <Content Include="public\index.html" />
     <Content Include="src\App.vue" />
+    <Content Include="src\assets\fonts\SourceSansPro-Black.ttf" />
+    <Content Include="src\assets\fonts\SourceSansPro-Bold.ttf" />
+    <Content Include="src\assets\fonts\SourceSansPro-Regular.ttf" />
+    <Content Include="src\assets\icons\garbage %281%29.eps" />
+    <Content Include="src\assets\icons\garbage.svg" />
+    <Content Include="src\assets\icons\left-arrow.eps" />
+    <Content Include="src\assets\icons\left-arrow.svg" />
+    <Content Include="src\assets\icons\magnifying-glass.eps" />
+    <Content Include="src\assets\icons\magnifying-glass.svg" />
+    <Content Include="src\assets\icons\shopping-cart %281%29.eps" />
+    <Content Include="src\assets\icons\shopping-cart.svg" />
+    <Content Include="src\components\Banner.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\Footer.vue">
       <SubType>Code</SubType>
     </Content>
@@ -44,7 +61,13 @@
     <Content Include="src\components\Home.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\components\Products.vue" />
+    <Content Include="src\components\Products.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\Requests.vue" />
+    <Content Include="src\components\Spinner.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\pages\GeneralViews\NotFoundPage.vue" />
     <Content Include="src\pages\GeneralViews\WorkingOn.vue" />
   </ItemGroup>
@@ -52,10 +75,13 @@
     <Folder Include="config\" />
     <Folder Include="dist\" />
     <Folder Include="public\" />
+    <Folder Include="public\fonts\" />
     <Folder Include="src\" />
     <Folder Include="src\apis\" />
     <Folder Include="src\apis\viacep\" />
     <Folder Include="src\assets\" />
+    <Folder Include="src\assets\fonts\" />
+    <Folder Include="src\assets\icons\" />
     <Folder Include="src\components\" />
     <Folder Include="src\configs\" />
     <Folder Include="src\pages\" />
