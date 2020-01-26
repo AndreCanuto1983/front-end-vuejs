@@ -30,6 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include=".eslintignore" />
     <Content Include="jsconfig.json" />
     <Content Include="public\favicon.png" />
     <Content Include="public\index.html" />
@@ -73,7 +74,6 @@
     <Compile Include="src\services\ProductService.js" />
     <Compile Include="src\util\CustomNotifications.js" />
     <Compile Include="src\util\Formatter.js" />
-    <Compile Include="src\util\throttle.js" />
     <Compile Include="src\veeValidate\strings\pt_BR.js" />
     <Compile Include="src\veeValidate\strings\utils.js" />
     <Compile Include="vue.config.js" />
