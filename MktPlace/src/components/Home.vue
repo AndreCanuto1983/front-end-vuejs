@@ -1,5 +1,6 @@
 <template>
     <b-container>
+        <Header></Header>
         <b-row v-if="products.length > 0">
             <div v-for="item in products"
                  class="col-lg-3 col-md-5"
@@ -19,17 +20,25 @@
                 </b-button>
             </div>
         </b-row>
+        <!--spinner-->
         <b-row v-else align-self="center">
             <b-spinner variant="primary" type="grow" label="Spinning"></b-spinner>
             Carregando...
         </b-row>
+        <Footer></Footer>
     </b-container>
 </template>
 
 <script>
     import ProductService from '../services/ProductService'
+    import Header from '../components/Header.vue'
+    import Footer from '../components/Footer.vue'
 
     export default {
+        components: {
+            'Header': Header,
+            'Footer': Footer
+        },
         data() {
             return {
                 products: {}
@@ -45,7 +54,7 @@
                 productService.get().then(response => {
                     this.products = response.data;
                 }).catch(error => {
-                    window.console.log('Error', error);                    
+                    window.console.log('Error', error);
                 });
             },
         },
