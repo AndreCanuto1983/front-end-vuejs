@@ -54,12 +54,10 @@
                     </b-col>
                 </b-row>
             </b-col>
-        </b-row>
-        <b-row class="alignButton" >
             <b-button class="button">
                 Concluir compra
             </b-button>
-        </b-row>
+        </b-row>       
         <Footer></Footer>
     </b-container>
 </template>
@@ -156,7 +154,7 @@
                 this.person.phone = '';
             },
             clearAddress() {
-                this.address.id = 0;                
+                this.address.id = 0;
                 this.address.ibge = '';
                 this.address.address = '';
                 this.address.number = '';
@@ -171,18 +169,19 @@
 </script>
 
 <style>
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
     .alignContent {
         top: 160px;
         position: relative;
         margin-bottom: 60px;
-    }
-
-    .alignButton {
-        top: 130px;
-        position: relative;
-        margin-bottom: 10px;
-        float: right;
-        margin-right: auto;
     }
 
     .button {
@@ -190,6 +189,7 @@
         color: white;
         border-radius: 0;
         border: 1px solid lightgrey;
+        margin-top: 20px;
     }
 
         .button:hover {
