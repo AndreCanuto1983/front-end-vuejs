@@ -49,7 +49,7 @@
     }
 
     .placeColor {
-        fill: blueviolet;
+        color: blueviolet;
     }
 
     .img {
