@@ -7,7 +7,7 @@
                 <div v-for="item in products"
                      class="col-lg-3 col-md-5"
                      style="margin: 10px">
-                    <b-card class="shadow">
+                    <b-card class="boxShadow">
                         <img class="img" :src="item.picture" />
                         <p class="tag">Eletrônicos</p>
                         <div class="description">
@@ -17,7 +17,7 @@
                             <h5>R${{item.price}}</h5>
                         </div>
                     </b-card>
-                    <b-button class="button">
+                    <b-button class="button boxShadow">
                         ADICIONAR AO CARRINHO
                     </b-button>
                 </div>
@@ -73,18 +73,16 @@
         align-items: center;
     }
 
+    .boxShadow {
+        box-shadow: 2px -5px 20px lightgrey;
+    }
+
     .card {
         border-radius: 0px;
     }
 
     .img {
         max-width: 150px;
-    }
-
-    .shadow {
-        -webkit-box-shadow: 0px -5px 13px 0px rgba(163,163,163,0.38);
-        -moz-box-shadow: 0px -5px 13px 0px rgba(163,163,163,0.38);
-        box-shadow: 0px -5px 13px 0px rgba(163,163,163,0.38);
     }
 
     .tag {
