@@ -20,6 +20,7 @@
         background-color: blueviolet;
         color: white;
         padding: 20px;
+        background: linear-gradient(100deg, blueviolet, blueviolet, Thistle, blueviolet);
     }
 
     .alignBanner {
