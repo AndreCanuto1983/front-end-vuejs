@@ -2,7 +2,7 @@
     <div class="header boxShadow">
         <b-row class="mktPlace" align-v="start">
             <b-col cols="6" md="6">
-                <h6><b class="mktColor">Mkt</b><b class="placeColor">Place</b></h6>
+                <h6 @click.prevent="goHome()" class="alterCursor"><b class="mktColor">Mkt</b><b class="placeColor">Place</b></h6>
             </b-col>
             <b-col cols="6" md="6">
                 <p @click.prevent="goRequests()" class="alignProduct alterCursor textConfig">
@@ -22,6 +22,9 @@
             };
         },
         methods: {
+            goHome() {
+                this.$router.push({ path: "/home" }).catch(err => { });
+            },
             goRequests() {
                 this.$router.push({ path: "/requests" }).catch(err => { });
             },
