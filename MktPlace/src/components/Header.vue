@@ -67,10 +67,4 @@
     .textConfig {
         font-size: 12px;
     }
-
-    #feedback svg {
-        fill: red;
-        border: none;
-        background: none;
-    }
 </style>
