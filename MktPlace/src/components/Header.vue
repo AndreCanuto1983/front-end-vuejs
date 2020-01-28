@@ -1,11 +1,15 @@
 ﻿<template>
     <div class="header">
-        <b-row align-v="start" style="padding-left:100px">
-            <h6><b class="mktColor">Mkt</b></h6>
-            <h6><b class="placeColor">Place</b></h6>
-            <!--falta ajustes-->
-            <p @click.prevent="goRequests()" class="alignProduct alterCursor"></p>
-            <img @click.prevent="goRequests()" class="img alterCursor" src="@/assets/icons/shopping-cart.svg" />
+        <b-row class="mktPlace" align-v="start">
+            <b-col cols="6" sm="6">
+                <h6><b class="mktColor">Mkt</b><b class="placeColor">Place</b></h6>
+            </b-col>
+            <b-col cols="6" sm="6">
+                <p @click.prevent="goRequests()" class="alignProduct alterCursor textConfig">
+                    Produtos
+                    <img @click.prevent="goRequests()" class="img alterCursor" src="@/assets/icons/shopping-cart.svg" />
+                </p>
+            </b-col>
         </b-row>
     </div>
 </template>
@@ -36,6 +40,10 @@
         padding: 10px;
     }
 
+    .mktPlace {
+        padding-left: 10px
+    }
+
     .mktColor {
         color: dimgray;
     }
@@ -46,14 +54,18 @@
 
     .img {
         max-width: 150px;
-        color: blueviolet;
+        fill:blueviolet;
     }
 
     .alignProduct {
-        margin-right: 70%;
+        margin-right: 10%;
     }
 
     .alterCursor {
         cursor: pointer;
+    }
+
+    .textConfig {
+        font-size: 12px;
     }
 </style>
