@@ -41,13 +41,9 @@
     <Content Include="src\assets\fonts\SourceSansPro-Black.ttf" />
     <Content Include="src\assets\fonts\SourceSansPro-Bold.ttf" />
     <Content Include="src\assets\fonts\SourceSansPro-Regular.ttf" />
-    <Content Include="src\assets\icons\garbage %281%29.eps" />
     <Content Include="src\assets\icons\garbage.svg" />
-    <Content Include="src\assets\icons\left-arrow.eps" />
     <Content Include="src\assets\icons\left-arrow.svg" />
-    <Content Include="src\assets\icons\magnifying-glass.eps" />
     <Content Include="src\assets\icons\magnifying-glass.svg" />
-    <Content Include="src\assets\icons\shopping-cart %281%29.eps" />
     <Content Include="src\assets\icons\shopping-cart.svg" />
     <Content Include="src\components\Banner.vue">
       <SubType>Code</SubType>

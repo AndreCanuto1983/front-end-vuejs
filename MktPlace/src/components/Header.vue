@@ -6,7 +6,7 @@
             </b-col>
             <b-col cols="6" sm="6">
                 <p @click.prevent="goRequests()" class="alignProduct alterCursor textConfig">
-                    Produtos
+                    Produtos &nbsp;&nbsp;
                     <img @click.prevent="goRequests()" class="img alterCursor" src="@/assets/icons/shopping-cart.svg" />
                 </p>
             </b-col>
@@ -49,12 +49,11 @@
     }
 
     .placeColor {
-        color: blueviolet;
+        fill: blueviolet;
     }
 
     .img {
         max-width: 150px;
-        fill:blueviolet;
     }
 
     .alignProduct {
@@ -67,5 +66,11 @@
 
     .textConfig {
         font-size: 12px;
+    }
+
+    #feedback svg {
+        fill: red;
+        border: none;
+        background: none;
     }
 </style>
