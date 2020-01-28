@@ -2,7 +2,7 @@
     <b-container>
         <Header></Header>
         <b-row class="alignContent">
-            <b-col cols="6">
+            <b-col lg="6" md="12">
                 <label>Nome</label>
                 <b-form-input v-model="person.name"></b-form-input>
                 <label>Email</label>
@@ -20,15 +20,15 @@
                     </b-col>
                 </b-row>
             </b-col>
-            <b-col cols="6">
+            <b-col lg="6" md="12">
                 <label>CEP</label>
                 <b-form-input v-mask="['##.###-###']" v-model="address.postalCode" @blur="seachPostalCode()" @keyup.enter.prevent="seachPostalCode()"></b-form-input>
                 <b-row>
-                    <b-col>
+                    <b-col cols="8">
                         <label>Endereço</label>
                         <b-form-input v-model="address.address"></b-form-input>
                     </b-col>
-                    <b-col>
+                    <b-col cols="4">
                         <label>Número</label>
                         <b-form-input v-mask="['###.###.###-##']" v-model="address.number"></b-form-input>
                     </b-col>
@@ -44,20 +44,24 @@
                     </b-col>
                 </b-row>
                 <b-row>
-                    <b-col>
+                    <b-col cols="8">
                         <label>Cidade</label>
                         <b-form-input v-mask="['(##)#####-####','(##)####-####']" v-model="address.city"></b-form-input>
                     </b-col>
-                    <b-col>
+                    <b-col cols="4">
                         <label>Estado</label>
                         <b-form-input v-mask="'AA'" v-model="address.state"></b-form-input>
+                    </b-col>                    
+                </b-row>
+                <b-row align-h="end">
+                    <b-col lg="5" md="3">
+                        <b-button class="button" style="width:155px;">
+                            Concluir compra
+                        </b-button>
                     </b-col>
                 </b-row>
             </b-col>
-            <b-button class="button">
-                Concluir compra
-            </b-button>
-        </b-row>       
+        </b-row>
         <Footer></Footer>
     </b-container>
 </template>
@@ -179,6 +183,12 @@
     }
 
     .alignContent {
+        top: 160px;
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    .alignButton {
         top: 160px;
         position: relative;
         margin-bottom: 60px;

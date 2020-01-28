@@ -1,10 +1,10 @@
 ﻿<template>
-    <div class="header">
+    <div class="header boxShadow">
         <b-row class="mktPlace" align-v="start">
-            <b-col cols="6" sm="6">
+            <b-col cols="6" md="6">
                 <h6><b class="mktColor">Mkt</b><b class="placeColor">Place</b></h6>
             </b-col>
-            <b-col cols="6" sm="6">
+            <b-col cols="6" md="6">
                 <p @click.prevent="goRequests()" class="alignProduct alterCursor textConfig">
                     Produtos &nbsp;&nbsp;
                     <img @click.prevent="goRequests()" class="img alterCursor" src="@/assets/icons/shopping-cart.svg" />
@@ -66,5 +66,9 @@
 
     .textConfig {
         font-size: 12px;
+    }
+
+    .boxShadow {
+        box-shadow: 0px 1px 5px lightgrey;
     }
 </style>
