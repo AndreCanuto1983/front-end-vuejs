@@ -4,54 +4,54 @@
         <b-row class="alignContent">
             <b-col lg="6" md="12">
                 <label>Nome</label>
-                <b-form-input v-model="person.name"></b-form-input>
+                <b-input v-model="person.name"></b-input>
                 <label>Email</label>
-                <b-form-input v-model="person.email"></b-form-input>
+                <b-input v-model="person.email"></b-input>
                 <label>Cpf</label>
-                <b-form-input v-mask="['###.###.###-##']" v-model="person.cpf"></b-form-input>
+                <b-input v-mask="['###.###.###-##']" v-model="person.cpf"></b-input>
                 <b-row>
                     <b-col>
                         <label>Data Nascimento</label>
-                        <b-form-input v-mask="['##/##/####']" v-model="person.birthDate"></b-form-input>
+                        <b-input v-mask="['##/##/####']" v-model="person.birthDate"></b-input>
                     </b-col>
                     <b-col>
                         <label>Telefone</label>
-                        <b-form-input v-mask="['(##)#####-####','(##)####-####']" v-model="person.phone"></b-form-input>
+                        <b-input v-mask="['(##)#####-####','(##)####-####']" v-model="person.phone"></b-input>
                     </b-col>
                 </b-row>
             </b-col>
             <b-col lg="6" md="12">
                 <label>CEP</label>
-                <b-form-input v-mask="['##.###-###']" v-model="address.postalCode" @blur="seachPostalCode()" @keyup.enter.prevent="seachPostalCode()"></b-form-input>
+                <b-input v-mask="['##.###-###']" v-model="address.postalCode" @blur="seachPostalCode()" @keyup.enter.prevent="seachPostalCode()"></b-input>
                 <b-row>
                     <b-col cols="8">
                         <label>Endereço</label>
-                        <b-form-input v-model="address.address"></b-form-input>
+                        <b-input v-model="address.address"></b-input>
                     </b-col>
                     <b-col cols="4">
                         <label>Número</label>
-                        <b-form-input v-mask="['###.###.###-##']" v-model="address.number"></b-form-input>
+                        <b-input v-mask="['###.###.###-##']" v-model="address.number"></b-input>
                     </b-col>
                 </b-row>
                 <b-row>
                     <b-col>
                         <label>Complemento</label>
-                        <b-form-input v-mask="['##/##/####']" v-model="address.complement"></b-form-input>
+                        <b-input v-mask="['##/##/####']" v-model="address.complement"></b-input>
                     </b-col>
                     <b-col>
                         <label>Bairro</label>
-                        <b-form-input v-mask="['(##)#####-####','(##)####-####']" v-model="address.neighborhood"></b-form-input>
+                        <b-input v-mask="['(##)#####-####','(##)####-####']" v-model="address.neighborhood"></b-input>
                     </b-col>
                 </b-row>
                 <b-row>
                     <b-col cols="8">
                         <label>Cidade</label>
-                        <b-form-input v-mask="['(##)#####-####','(##)####-####']" v-model="address.city"></b-form-input>
+                        <b-input v-mask="['(##)#####-####','(##)####-####']" v-model="address.city"></b-input>
                     </b-col>
                     <b-col cols="4">
                         <label>Estado</label>
-                        <b-form-input v-mask="'AA'" v-model="address.state"></b-form-input>
-                    </b-col>                    
+                        <b-input v-mask="'AA'" v-model="address.state"></b-input>
+                    </b-col>
                 </b-row>
                 <b-row align-h="end">
                     <b-col lg="5" md="3">
