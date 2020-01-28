@@ -107,6 +107,7 @@
     }
 
     .button {
+        margin-top: auto;
         background-color: white;
         color: blueviolet;
         border-radius: 0;
