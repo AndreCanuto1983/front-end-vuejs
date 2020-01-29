@@ -2,10 +2,10 @@
     <div class="header boxShadow">
         <b-row class="mktPlace" align-v="start">
             <b-col cols="6" md="6">
-                <h6 @click.prevent="goHome()" class="alterCursor"><b class="mktColor">Mkt</b><b class="placeColor">Place</b></h6>
+                <h6 @click.prevent="goProducts()" class="alterCursor"><b class="mktColor">Mkt</b><b class="placeColor">Place</b></h6>
             </b-col>
             <b-col cols="6" md="6">
-                <p @click.prevent="goRequests()" class="alignProduct alterCursor textConfig">
+                <p @click.prevent="goShoppingCart()" class="alignProduct alterCursor textConfig">
                     Produtos &nbsp;&nbsp;
                     <img @click.prevent="goRequests()" class="img alterCursor" src="@/assets/icons/shopping-cart.svg" />
                 </p>
@@ -22,11 +22,11 @@
             };
         },
         methods: {
-            goHome() {
-                this.$router.push({ path: "/home" }).catch(err => { });
+            goProducts() {
+                this.$router.push({ path: "/products" }).catch(err => { });
             },
-            goRequests() {
-                this.$router.push({ path: "/requests" }).catch(err => { });
+            goShoppingCart() {
+                this.$router.push({ path: "/shoppingcart" }).catch(err => { });
             },
         },
     };

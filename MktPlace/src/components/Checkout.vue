@@ -4,7 +4,10 @@
         <b-row class="alignContent">
             <b-col lg="6" md="12">
                 <label>Nome</label>
-                <b-input v-model="person.name"></b-input>
+                <b-input name="name"
+                         v-model="person.name"
+                         maxlength="60">
+                </b-input>
                 <label>Email</label>
                 <b-input v-model="person.email"></b-input>
                 <label>Cpf</label>
@@ -55,7 +58,7 @@
                 </b-row>
                 <b-row align-h="end">
                     <b-col lg="5" md="3">
-                        <b-button class="button" style="width:155px;">
+                        <b-button @click.prevent="msg()" class="button" style="width:155px;">
                             Concluir compra
                         </b-button>
                     </b-col>
@@ -70,15 +73,15 @@
     import Header from '../components/Header.vue'
     import Footer from '../components/Footer.vue'
     import Spinner from '../components/Spinner.vue'
-    import ApiCep from '@/apis/viacep/viaCepApi.js';
-    import Formatter from '@/util/Formatter.js';
+    import ApiCep from '../apis/viacep/viaCepApi.js'
+    import Formatter from '../util/Formatter.js'
+    import Swal from 'sweetalert2'
 
     export default {
         components: {
             'Header': Header,
             'Footer': Footer,
-            'Spinner': Spinner,
-
+            'Spinner': Spinner
         },
         data() {
             return {
@@ -127,12 +130,12 @@
                     return await apiCep.GetCep(postalCode).then(response => {
                         if (response.data.erro != true) {
                             this.postalCode = response.data;
-                            this.address.postalCode = this.postalCode.cep.toUpperCase();
-                            this.address.address = this.postalCode.logradouro.toUpperCase();
-                            this.address.neighborhood = this.postalCode.bairro.toUpperCase();
-                            this.address.city = this.postalCode.localidade.toUpperCase();
+                            this.address.postalCode = this.postalCode.cep;
+                            this.address.address = this.postalCode.logradouro;
+                            this.address.neighborhood = this.postalCode.bairro;
+                            this.address.city = this.postalCode.localidade;
                             this.address.state = this.postalCode.uf.toUpperCase();
-                            this.address.ibge = this.postalCode.ibge.toUpperCase();
+                            this.address.ibge = this.postalCode.ibge;
                         }
                         else {
                             console.log('O CEP informado não foi encontrado!');
@@ -141,7 +144,7 @@
                         if (error.message == "Network Error") {
                             console.log('error without Internet: ', error);
                             console.log('Não foi possível pesquisar o cep, verifique sua conexão com a internet.');
-                            this.clear();
+                            this.clearAddress();
                         }
                         else {
                             console.log('error get cep: ', error);
@@ -166,9 +169,22 @@
                 this.address.city = '';
                 this.address.state = '';
                 this.address.complement = '';
+            },
+            msg() {
+                Swal.fire({
+                    icon: 'success',
+                    html: 'Seu cadastro foi solicitado com sucesso!',
+                    showCloseButton: true,
+                    showCancelButton: false,
+                    confirmButtonText: '&larr; VOLTAR PARA HOME!',
+                    imageUrl: '../src/assets/icons/left-arrow.svg',
+                }).then(function (result) {
+                    if (result) {
+                        window.location.pathname = '/products';
+                    }
+                });
             }
         },
-
     }
 </script>
 
@@ -206,4 +222,13 @@
             background-color: blueviolet;
             color: white;
         }
+
+    .swal2-styled.swal2-confirm, .swal2-styled.swal2-confirm:hover {
+        background-color: none !important;
+        background: none !important;
+        border: 0px solid white !important;
+        color: blueviolet !important;
+        border: none !important;
+        font-size: small !important;
+    }
 </style>

@@ -33,9 +33,6 @@
     <Content Include=".eslintignore" />
     <Content Include="jsconfig.json" />
     <Content Include="public\favicon.png" />
-    <Content Include="public\fonts\SourceSansPro-Black.ttf" />
-    <Content Include="public\fonts\SourceSansPro-Bold.ttf" />
-    <Content Include="public\fonts\SourceSansPro-Regular.ttf" />
     <Content Include="public\index.html" />
     <Content Include="src\App.vue" />
     <Content Include="src\assets\fonts\SourceSansPro-Black.ttf" />
@@ -54,13 +51,13 @@
     <Content Include="src\components\Header.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\components\Home.vue" />
+    <Content Include="src\components\Products.vue" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="src\components\Products.vue">
+    <Content Include="src\components\Checkout.vue" />
+    <Content Include="src\components\ShoppingCart.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\components\Requests.vue" />
     <Content Include="src\components\Spinner.vue">
       <SubType>Code</SubType>
     </Content>
@@ -71,7 +68,6 @@
     <Folder Include="config\" />
     <Folder Include="dist\" />
     <Folder Include="public\" />
-    <Folder Include="public\fonts\" />
     <Folder Include="src\" />
     <Folder Include="src\apis\" />
     <Folder Include="src\apis\viacep\" />
@@ -85,8 +81,6 @@
     <Folder Include="src\routes\" />
     <Folder Include="src\services\" />
     <Folder Include="src\util\" />
-    <Folder Include="src\veeValidate\" />
-    <Folder Include="src\veeValidate\strings\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="babel.config.js" />
@@ -102,8 +96,6 @@
     <Compile Include="src\services\ProductService.js" />
     <Compile Include="src\util\CustomNotifications.js" />
     <Compile Include="src\util\Formatter.js" />
-    <Compile Include="src\veeValidate\strings\pt_BR.js" />
-    <Compile Include="src\veeValidate\strings\utils.js" />
     <Compile Include="vue.config.js" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
