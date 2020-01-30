@@ -1,4 +1,4 @@
-<template>
+<template id="Checkout">
     <b-container>
         <Header></Header>
         <b-row class="alignContent">

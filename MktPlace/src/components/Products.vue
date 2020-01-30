@@ -1,4 +1,4 @@
-<template>
+<template id="Products">
     <b-container>
         <Header></Header>
         <Banner></Banner>
@@ -18,7 +18,7 @@
                         </div>
                     </b-card>
                     <b-button class="button boxShadow"
-                              @click="goCheckout()">
+                              @click="emitProduct(item)">
                         ADICIONAR AO CARRINHO
                     </b-button>
                 </div>
@@ -35,7 +35,8 @@
     import Footer from '../components/Footer.vue'
     import Banner from '../components/Banner.vue'
     import Spinner from '../components/Spinner.vue'
-
+    import { EventBus } from '../services/event-bus'
+    
     export default {
         components: {
             'Header': Header,
@@ -45,7 +46,7 @@
         },
         data() {
             return {
-                products: {}
+                products: [],
             };
         },
         mounted() {
@@ -61,8 +62,12 @@
                     window.console.log('Error', error);
                 });
             },
+            emitProduct(product) {
+                EventBus.$emit('products', product);
+                this.goCheckout();
+            },
             goCheckout() {
-                this.$router.push({ path: "/checkout" }).catch(err => { });
+                this.$router.push({ path: "/shoppingcart" }).catch(err => { });
             }
         },
     };
