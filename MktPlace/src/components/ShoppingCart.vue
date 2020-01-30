@@ -25,7 +25,7 @@
         },
         data() {
             return {
-                fields: ['PRODUTOS', 'QUANTIDADE', 'VALOR UNITÁRIO', 'TOTAL'],
+                fields: ['PRODUTOS', 'QUANTIDADE', 'VALOR UNITÁRIO'],
                 products: []
             }
         },
@@ -35,8 +35,8 @@
                 this.setProducts(this.products);
             });
 
-            let response = this.getProducts();
-            this.products.push(response);
+            this.products = this.getProducts();
+            console.log(this.products);
         },
         methods: {
             setProducts(data) {
@@ -54,9 +54,9 @@
                 let productList = this.getProducts();
 
                 if (productList != undefined) {
-                    productList.forEach((item,index){
+                    productList.forEach((item,index) => {
                         if (item == data) {
-                            item.splice()
+                            item.splice(index,1);
                         }
                     })
                 }
