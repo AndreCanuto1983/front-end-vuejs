@@ -3,9 +3,23 @@
         <Header></Header>
         <b-row class="alignContent">
             <div>
-                <b-table hover :products="products" :fields="fields"></b-table>
+                <b-table hover :items="items"></b-table>
+                <!--<b-table hover :products="products"></b-table>-->                
+
+                <b-button variant="outline-primary" size="sm" @click="getProducts()">
+                    Print local storage
+                </b-button>
+
+                <b-button variant="outline-primary" size="sm" @click="clearLocalStorage()">
+                    clear
+                </b-button>
+
+                <b-button variant="outline-primary" size="sm" @click="productsOnList()">
+                    Print products
+                </b-button>
             </div>
         </b-row>
+       
         <Footer></Footer>
     </b-container>
 </template>
@@ -14,54 +28,56 @@
     import Header from '../components/Header.vue'
     import Footer from '../components/Footer.vue'
     import Spinner from '../components/Spinner.vue'
-    import { EventBus } from '../services/event-bus';
 
     export default {
         components: {
             'Header': Header,
             'Footer': Footer,
             'Spinner': Spinner,
-
         },
         data() {
             return {
-                fields: ['PRODUTOS', 'QUANTIDADE', 'VALOR UNITÁRIO'],
-                products: []
+                products: [],
+                items: []
             }
         },
-        created() {
-            EventBus.$on('products', data => {
-                console.log('Product', data);
-                this.setProducts(this.products);
-            });
-
-            this.products = this.getProducts();
-            console.log(this.products);
+        mounted() {            
+            this.products.push(this.$route.params.product);
+            let formatItems = {
+                Nome: this.products[0].name,
+                Quantidade: 0,
+                ValorUnitario: this.products[0].price,
+                Total: 0
+            }
+            this.items.push(formatItems);
+            console.log('products',this.products);
+            console.log('items', this.items);
         },
         methods: {
             setProducts(data) {
-                //armazeno os produtos no localStorage
-                localStorage.setItem('products', data);
+                let productList = {
+                    Produtos: data.name,
+                    Quantidade: 1,
+                    ValorUnitário: data.price,
+                    ValorTotal: 0
+                }
+
+                this.products.push(productList);
+
+                localStorage.setItem('productList', this.products);
             },
-            getProducts() {
-                //buscar os produtos no localstorage
-                return this.products = localStorage.getItem('products');
+            getProducts() {   
+                console.log('localStorage', localStorage.getItem('productList'))
+                return localStorage.getItem('productList');
             },
             delete(index) {
                 this.products.splice(index, 1);
             },
-            deleteLocalStorage(data) {
-                let productList = this.getProducts();
-
-                if (productList != undefined) {
-                    productList.forEach((item,index) => {
-                        if (item == data) {
-                            item.splice(index,1);
-                        }
-                    })
-                }
-                //removo os produtos
-                localStorage.removeItem('products');
+            clearLocalStorage() {
+                localStorage.removeItem('productList');
+            },
+            productsOnList() {
+                console.log(this.products);
             }
         }
     }
@@ -81,5 +97,23 @@
         top: 160px;
         position: relative;
         margin-bottom: 60px;
+    }
+
+    .table th, .table td {
+        width: 150px;        
+        height: 40px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: clip ellipsis;
+    }
+
+    @media (max-width: 480px) {
+        .table th, .table td {
+            width: 90px;
+            height: 40px;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: clip ellipsis;
+        }
     }
 </style>

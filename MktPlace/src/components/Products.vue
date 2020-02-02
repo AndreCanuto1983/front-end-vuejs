@@ -17,14 +17,17 @@
                             <h5>R${{item.price}}</h5>
                         </div>
                     </b-card>
-                    <b-button class="button boxShadow"
-                              @click="emitProduct(item)">
-                        ADICIONAR AO CARRINHO
-                    </b-button>
+                    <router-link :to="{ name: 'ShoppingCart', params: { product: item }}">
+                        <b-button class="button boxShadow"
+                                  @click="emitProduct(item)">
+                            ADICIONAR AO CARRINHO
+                        </b-button>
+                    </router-link>
                 </div>
             </b-row>
         </div>
         <Spinner v-else></Spinner>
+        <router-view></router-view>
         <Footer></Footer>
     </b-container>
 </template>
@@ -36,7 +39,7 @@
     import Banner from '../components/Banner.vue'
     import Spinner from '../components/Spinner.vue'
     import { EventBus } from '../services/event-bus'
-    
+
     export default {
         components: {
             'Header': Header,
@@ -61,14 +64,7 @@
                 }).catch(error => {
                     window.console.log('Error', error);
                 });
-            },
-            emitProduct(product) {
-                EventBus.$emit('products', product);
-                this.goCheckout();
-            },
-            goCheckout() {
-                this.$router.push({ path: "/shoppingcart" }).catch(err => { });
-            }
+            }            
         },
     };
 </script>
@@ -121,12 +117,17 @@
         color: blueviolet;
         border-radius: 0;
         font-size: 12px;
-        width: inherit;
+        width: -webkit-fill-available;
+        padding: 5px;
         border: 1px solid lightgrey;
+        text-align: center;
+        text-transform: uppercase;
     }
 
         .button:hover {
             background-color: blueviolet;
-            color: white;
+            color: white !important;
+            text-decoration: none !important;
+            text-decoration-color: white;
         }
 </style>

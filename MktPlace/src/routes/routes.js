@@ -9,9 +9,9 @@ const ShoppingCart = () => import('../components/ShoppingCart.vue');
 
 const routes = [
     { path: '/', redirect: '/products' },
-    { path: '/products', component: Products },
-    { path: '/checkout', component: Checkout },
-    { path: '/shoppingcart', component: ShoppingCart },
+    { path: '/products', name: 'Products', component: Products },
+    { path: '/checkout', name: 'Checkout', component: Checkout },
+    { path: '/shoppingcart', name: 'ShoppingCart', component: ShoppingCart },
     { path: '*', component: NotFound },
 ]
 
