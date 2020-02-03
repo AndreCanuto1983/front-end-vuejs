@@ -12,7 +12,7 @@ const routes = [
     { path: '/products', name: 'Products', component: Products },
     { path: '/checkout', name: 'Checkout', component: Checkout },
     { path: '/shoppingcart', name: 'ShoppingCart', component: ShoppingCart },
-    { path: '*', component: NotFound },
+    { path: '*', name: 'NotFound', component: NotFound },
 ]
 
 export default routes

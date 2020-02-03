@@ -2,24 +2,22 @@
     <b-container>
         <Header></Header>
         <b-row class="alignContent">
-            <div>
+            <div v-if="items[0] != undefined">
                 <b-table hover :items="items"></b-table>
-                <!--<b-table hover :products="products"></b-table>-->                
-
                 <b-button variant="outline-primary" size="sm" @click="getProducts()">
                     Print local storage
                 </b-button>
-
                 <b-button variant="outline-primary" size="sm" @click="clearLocalStorage()">
                     clear
                 </b-button>
-
                 <b-button variant="outline-primary" size="sm" @click="productsOnList()">
                     Print products
                 </b-button>
             </div>
+            <div align-h="center" v-if="items[0] == undefined" class="msg">
+                <p>Carrinho vazio =/</p>
+            </div>
         </b-row>
-       
         <Footer></Footer>
     </b-container>
 </template>
@@ -41,17 +39,26 @@
                 items: []
             }
         },
-        mounted() {            
-            this.products.push(this.$route.params.product);
-            let formatItems = {
-                Nome: this.products[0].name,
-                Quantidade: 0,
-                ValorUnitario: this.products[0].price,
-                Total: 0
+        mounted() {
+            if (this.$route.params.product != undefined) {
+
+                this.products.push(this.$route.params.product);
+
+                let val = parseFloat((this.products[0].price).replace(".", ""));
+                val = val;
+                let total = val * 1;
+
+                let formatItems = {
+                    Nome: this.products[0].name,
+                    Quantidade: 1,
+                    ValorUnitario: val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
+                    Total: total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+                }
+                this.items.push(formatItems);
+
+                console.log('products', this.products);
+                console.log('items', this.items);
             }
-            this.items.push(formatItems);
-            console.log('products',this.products);
-            console.log('items', this.items);
         },
         methods: {
             setProducts(data) {
@@ -66,7 +73,7 @@
 
                 localStorage.setItem('productList', this.products);
             },
-            getProducts() {   
+            getProducts() {
                 console.log('localStorage', localStorage.getItem('productList'))
                 return localStorage.getItem('productList');
             },
@@ -100,11 +107,18 @@
     }
 
     .table th, .table td {
-        width: 150px;        
+        width: 150px;
         height: 40px;
         display: inline-block;
         overflow: hidden;
         text-overflow: clip ellipsis;
+    }
+
+    .msg {
+        font-size: 20px;
+        color: blueviolet;
+        text-shadow: 3px 2px 3px lightgrey;
+        margin-top: 50%;
     }
 
     @media (max-width: 480px) {

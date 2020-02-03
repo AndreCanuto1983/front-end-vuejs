@@ -11,15 +11,14 @@
                         <img class="img" :src="item.picture" />
                         <p class="tag">Eletrônicos</p>
                         <div class="description">
-                            <p>{{item.name}}</p>
+                            <p>{{item.name == undefined ? 'teste' : item.name}}</p>
                         </div>
                         <div>
                             <h5>R${{item.price}}</h5>
                         </div>
                     </b-card>
                     <router-link :to="{ name: 'ShoppingCart', params: { product: item }}">
-                        <b-button class="button boxShadow"
-                                  @click="emitProduct(item)">
+                        <b-button class="button boxShadow">
                             ADICIONAR AO CARRINHO
                         </b-button>
                     </router-link>
@@ -38,7 +37,6 @@
     import Footer from '../components/Footer.vue'
     import Banner from '../components/Banner.vue'
     import Spinner from '../components/Spinner.vue'
-    import { EventBus } from '../services/event-bus'
 
     export default {
         components: {
