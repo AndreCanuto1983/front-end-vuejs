@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
   .centered {
   display: flex;
   padding-bottom: 150px;
