@@ -1,3 +1,0 @@
-D:\Downloads\Andre\Luz de Gaia\front\ecommerce\obj\Debug\ecommerce.njsprojAssemblyReference.cache
-D:\Downloads\Andre\Luz de Gaia\front\ecommerce\obj\Debug\ecommerce.njsproj.CoreCompileInputs.cache
-D:\Downloads\Andre\Luz de Gaia\front\ecommerce\bin\Microsoft.NodejsTools.WebRole.dll
