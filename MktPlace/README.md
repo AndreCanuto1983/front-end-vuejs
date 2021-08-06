@@ -1,3 +1,0 @@
-﻿# MktPlace André Canuto
-
-
